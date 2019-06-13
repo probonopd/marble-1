@@ -23,7 +23,7 @@ script:
 
 after_success:
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-  - bash upload.sh Tor*.AppImage*
+  - bash upload.sh Marble*.AppImage*
   
 branches:
   except:
