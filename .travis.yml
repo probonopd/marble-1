@@ -15,6 +15,7 @@ script:
   - cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
   - make -j$(nproc)
   - make DESTDIR=appdir -j$(nproc) install ; find appdir/
+  - cp appdir/usr/share/icons/hicolor/128x128/apps/marble.png appdir/ # Why is this needed?
   - export LD_LIBRARY_PATH=$(readlink -f appdir/usr/lib/x86_64-linux-gnu/)
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
